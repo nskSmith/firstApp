@@ -1,20 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-
+import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserData } from 'src/data/user-data.service';
-import { UserDataComponent } from 'src/data/user-data.component'
+import { ToDoComponent } from 'src/components/todo/todo.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    UserDataComponent
+    AppComponent, ToDoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, InMemoryWebApiModule.forRoot(UserData)
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

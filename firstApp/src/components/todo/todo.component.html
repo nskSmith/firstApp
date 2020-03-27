@@ -1,0 +1,18 @@
+<div>
+    <table>
+      <thead>
+      <tr>
+        <th class = 'first-col'>Date</th>
+        <th>Task</th>
+        <th class = 'status-col'>Status</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor='let task of tasks'>
+        <td class = 'first-col'>{{task.date}}</td>
+        <td>{{task.text}}</td>
+        <td class = 'status-col' [ngClass]="{'done': isTaskStatusDone(task), 'in-progress': isTaskStatusInProgress(task)}">{{task.status}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
