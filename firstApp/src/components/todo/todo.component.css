@@ -1,6 +1,6 @@
-table {
+.task-list {
     border-collapse: collapse;
-    width: 900px ;
+    width: 900px;
 }
 
 th, td {
@@ -17,9 +17,9 @@ th, td {
     width: 100px;
 }
 
-th {
-    background-color: peru;
-    color:white
+.list-header {
+    background-color: rgb(205, 133, 63);
+    color:rgb(255, 255, 255)
 }
 
 .done {
@@ -33,3 +33,18 @@ th {
     font-weight: bold;    
     font-size: 15px;
 }
+
+.container {
+    display: grid;
+    grid-template-areas:
+      'left list right';
+    grid-gap: 10px;
+    padding: 10px;
+    width: 900px ;
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+.list { grid-area: list; }
+.right { grid-area: right;}
+.left { grid-area: left;}

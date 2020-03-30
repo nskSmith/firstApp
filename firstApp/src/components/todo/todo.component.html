@@ -1,18 +1,21 @@
-<div>
-    <table>
-      <thead>
-      <tr>
-        <th class = 'first-col'>Date</th>
-        <th>Task</th>
-        <th class = 'status-col'>Status</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor='let task of tasks'>
-        <td class = 'first-col'>{{task.date}}</td>
-        <td>{{task.text}}</td>
-        <td class = 'status-col' [ngClass]="{'done': isTaskStatusDone(task), 'in-progress': isTaskStatusInProgress(task)}">{{task.status}}</td>
-      </tr>
-      </tbody>
-    </table>
+<div class="container">
+  <div></div>
+  <div class="list">
+      <table class="task-list" >
+        <thead>
+        <tr>
+          <th class = "list-header first-col">Date</th>
+          <th class = "list-header">Task</th>
+          <th class = "list-header status-col">Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor='let task of tasks'>
+          <td class = 'first-col'>{{dateFormat(task)}}</td>
+          <td>{{task.text}}</td>
+          <td class = 'status-col' [ngClass]="{'done': isTaskStatusDone(task), 'in-progress': isTaskStatusInProgress(task)}">{{task.status}}</td>
+        </tr>
+        </tbody>
+      </table>
   </div>
+</div>
