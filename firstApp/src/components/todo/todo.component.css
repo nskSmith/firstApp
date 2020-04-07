@@ -48,3 +48,7 @@ th, td {
 .list { grid-area: list; }
 .right { grid-area: right;}
 .left { grid-area: left;}
+
+.top-align {
+    margin-top: 0px;
+}
