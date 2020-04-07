@@ -19,7 +19,7 @@ export class CreateTodoComponent {
   public createItem() { 
     this.taskService.createItem(this.nowDate,this.newItemText )
     if(this.newItemText) { this.createdState = true }
-    setTimeout(() => {  this.router.navigateByUrl('/todo'); }, 2000); 
+    setTimeout(() => {  this.router.navigateByUrl('/todo'); }, 1000); 
   }
 
 }
