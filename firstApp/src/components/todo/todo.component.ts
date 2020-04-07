@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Task } from './task' 
-import { Observable } from "rxjs";
-import { TaskService } from "./task.service";
-import { Router } from '@angular/router';
+import { Task, Status } from '../../tasks/task' 
+import { TaskService } from "../../tasks/task.service";
 
 @Component({
   selector: 'todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css']
 })
+
 export class ToDoComponent {
     constructor(private taskService: TaskService) {}   
     
@@ -18,11 +17,15 @@ export class ToDoComponent {
         this.tasks = this.taskService.getTasks();
     }
 
+    dateFormat(task: Task) {
+      return new Intl.DateTimeFormat('ru-RU').format(task.date);
+    }
+
     isTaskStatusDone(task: Task): boolean {
-      return task.status == 'Done';
+      return task.status === Status.Done;
     }
     isTaskStatusInProgress(task: Task): boolean {
-      return task.status == 'InProgress';
+      return task.status === Status.InProgress;
     }
 }
 

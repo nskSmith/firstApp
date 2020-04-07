@@ -1,0 +1,8 @@
+<h1 class="header">Create a new TODO Item</h1>
+<div class="container">
+    <div class="center-div">
+        <input class="text-input" placeholder="New item text.." [(ngModel)] = "newItemText">
+        <button [ngClass]="{'disable': !newItemText}" (click) = "createItem()"><span>CREATE</span></button>
+    </div>
+</div>
+<p class="message" *ngIf="createdState">New item is created!</p>
